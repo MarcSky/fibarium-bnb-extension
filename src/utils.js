@@ -21,6 +21,10 @@ export function getPermName(key) {
             return "BNB Chain Activity";
         case "polygon_activity":
             return "Polygon Activity";
+        case "eth_activity":
+            return "Etherium Activity"
+        case "op_activity":
+            return "Optimism Activity"
         default:
             return "Unknown";
     }
@@ -43,6 +47,10 @@ export function getPermShortName(key) {
             return "BNB Chain";
         case "polygon_activity":
             return "Polygon";
+        case "eth_activity":
+            return "Etherium Activity"
+        case "op_activity":
+            return "Optimism Activity"
         default:
             return "Unknown";
     }

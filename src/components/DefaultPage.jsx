@@ -14,23 +14,24 @@ import {LockOpen} from "@material-ui/icons";
 import {Permissions} from "./Permissions";
 import {Information} from "./Information";
 import {SuccessPage} from "./SuccessPage";
+// const Web3 = require('web3');
 
 
 const styles = {
     root: {
         minWidth: 300,
         maxWidth: 300,
-        minHeight: 460,
-        maxHeight: 460,
+        minHeight: 520,
+        maxHeight: 520,
         // backgroundColor: 'gray'
     },
     root_container: {
         marginLeft: 20,
-        minHeight: 400,
+        minHeight: 460,
     },
     root_container_login: {
         marginLeft: 10,
-        minHeight: 400,
+        minHeight: 460,
     },
     root_container_button: {
         marginLeft: 20,
@@ -171,9 +172,12 @@ class DefaultPage extends React.Component {
 
         // const nodeUrl = 'https://bsc-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5';
         // const web3 = new Web3(new Web3.providers.HttpProvider(nodeUrl));
+        // let addressValue = "0xcaa701c5cc889ef6bbadcaefbf7262c9a0e1a299"
+        // let balance = web3.eth.getBalance(addressValue);
+        // console.log('balance', balance)
 
         const handleUnlockButtonClick = (password) => {
-            if (password === "balonka1") {
+            if (password === "password1") {
                 this.props.setLoginStatus(true);
 
             }
