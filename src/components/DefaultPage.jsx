@@ -153,9 +153,11 @@ class DefaultPage extends React.Component {
     // Todo REMOVE
     componentDidMount() {
         let levan_json = {
-            "profile": "W3siayI6InR3aXR0ZXIiLCJ2IjoiQHRvbSJ9LHsiayI6ImRpc2NvcmQiLCJ2IjoiQHRvbS1kaXNjb3Jk" +
-                "In0seyJrIjoiaW5zdGFncmFtIiwidiI6IkB0b20taW5zdGFtYWZpYSJ9LHsiayI6ImJhYiIsInYiOnRydWV9LHs" +
-                "iayI6ImJuYl9hY3Rpdml0eSIsInYiOnRydWV9LHsiayI6InBvbHlnb25fYWN0aXZpdHkiLCJ2Ijp0cnVlfV0="
+            "profile": "W3siayI6IndhbGxldCIsInYiOiIweDRhNzBkZWEzYWMwNDgxZjY2MjgxNzQzNmRjODc3ZTgyNjM3NWJkMzkifSx" +
+                "7ImsiOiJ0d2l0dGVyIiwidiI6IkBmaWJhcml1bS10d2l0dGVyIn0seyJrIjoiZGlzY29yZCIsInYiOiJAZmliYXJpdW0tZ" +
+                "GlzY29yZCJ9LHsiayI6Imluc3RhZ3JhbSIsInYiOiJAZmliYXJpdW0taW5zdGFncmFtIn0seyJrIjoiYmFiIiwidiI6dHJ1" +
+                "ZX0seyJrIjoiYm5iX2FjdGl2aXR5IiwidiI6dHJ1ZX0seyJrIjoiZXRoX2FjdGl2aXR5IiwidiI6dHJ1ZX0seyJrIjoib3" +
+                "BfYWN0aXZpdHkiLCJ2Ijp0cnVlfV0="
         }
         this.props.fetchPermListSuccess(levan_json)
     }
@@ -167,9 +169,13 @@ class DefaultPage extends React.Component {
     render() {
         const {classes, password, login_status, web3status, accept_success, perms, perm_list} = this.props;
 
+        // const nodeUrl = 'https://bsc-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5';
+        // const web3 = new Web3(new Web3.providers.HttpProvider(nodeUrl));
+
         const handleUnlockButtonClick = (password) => {
             if (password === "balonka1") {
                 this.props.setLoginStatus(true);
+
             }
         }
 
