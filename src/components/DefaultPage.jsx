@@ -14,7 +14,8 @@ import {LockOpen} from "@material-ui/icons";
 import {Permissions} from "./Permissions";
 import {Information} from "./Information";
 import {SuccessPage} from "./SuccessPage";
-// const Web3 = require('web3');
+import {contractABI} from "./contractABI";
+const Web3 = require('web3');
 
 
 const styles = {
@@ -170,11 +171,16 @@ class DefaultPage extends React.Component {
     render() {
         const {classes, password, login_status, web3status, accept_success, perms, perm_list} = this.props;
 
-        // const nodeUrl = 'https://bsc-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5';
-        // const web3 = new Web3(new Web3.providers.HttpProvider(nodeUrl));
-        // let addressValue = "0xcaa701c5cc889ef6bbadcaefbf7262c9a0e1a299"
-        // let balance = web3.eth.getBalance(addressValue);
-        // console.log('balance', balance)
+        const nodeUrl = 'https://bsc-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5';
+        const web3 = new Web3(new Web3.providers.HttpProvider(nodeUrl));
+        const contractAddress = "0x3517941bcb3763b6eaf167fda4e6430d1b475772"
+        let contract = new web3.eth.Contract(contractABI, contractAddress)
+        const wallet = '0x4a70dea3ac0481f662817436dc877e826375bd39'
+        console.log('contract', contract)
+        let tokenID = contract.methods.tokenIdOf(wallet).call();
+        console.log('tokenID', tokenID);
+        let tokenURL = contract.methods.tokenURI(tokenID.toString()).call();
+        console.log('tokenURL', tokenURL);
 
         const handleUnlockButtonClick = (password) => {
             if (password === "password1") {
